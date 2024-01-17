@@ -1,0 +1,43 @@
+﻿@model Orders
+
+<h2>Создать заказ</h2>
+
+<form asp-action="Create" method="post" class="order-form">
+    <div class="form-group">
+        <label asp-for="SenderCity">Город отправителя:</label>
+        <input asp-for="SenderCity" type="text" name="SenderCity" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SenderAddress">Адрес отправителя:</label>
+        <input asp-for="SenderAddress" type="text" name="SenderAddress" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RecipientCity">Город получателя:</label>
+        <input asp-for="RecipientCity" type="text" name="RecipientCity" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RecipientAddress">Адрес получателя:</label>
+        <input asp-for="RecipientAddress" type="text" name="RecipientAddress" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Weight">Вес груза:</label>
+        <input asp-for="Weight" type="text" name="Weight" class="form-control" required>
+        <span asp-validation-for="Weight" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PickupDate">Дата забора груза:</label>
+        <input asp-for="PickupDate" type="date" name="PickupDate" min="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")" class="form-control" required>
+        <span asp-validation-for="PickupDate" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-create">Создать</button>
+
+    <div class="mt-3">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Назад</a>
+    </div>
+</form>

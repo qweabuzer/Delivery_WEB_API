@@ -1,0 +1,39 @@
+﻿@model List<Orders>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+
+<a asp-action="Create" class="btn btn-primary">Создать заказ</a>
+
+<div class="page-header">
+    <center> 
+        <h1>Текущие заказы</h1>
+    </center>
+</div>
+
+<div class="orders-center">
+    @if (Model != null)
+    {
+        @foreach (var order in Model)
+        {
+            <div class="order-item" onmouseover="highlightOrder(this)" onmouseout="unhighlightOrder(this)">
+                <h2 class="order-number">Заказ №  @(order.SerialNumber.HasValue ? order.SerialNumber.ToString() : "N/A")</h2>
+                <div class="order-details">
+                    <h3 class="card-title">@order.RecipientCity</h3>
+                    <p class="card-subtitle">@order.PickupDate.ToShortDateString()</p>
+                </div>
+                <form method="post" asp-action="Order" asp-route-id="@order.Id">
+                    <button class="view-details-btn" type="submit">
+                        Детали заказа <i class="fas fa-info-circle"></i>
+                    </button>
+                </form>
+            </div>
+        }
+    }
+    else
+    {
+        <p>Нет доступных заказов</p>
+    }
+</div>

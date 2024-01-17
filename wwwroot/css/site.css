@@ -1,0 +1,145 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+.orders-center {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.order-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+    .order-item:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+/*    .order-item h3,*/
+    .order-item p
+    /*.order-item button */{
+        margin-bottom: 15px; /* Вертикальный отступ между элементами внутри order-item */
+    }
+
+.order-number {
+    color: #28a745;
+}
+
+.order-details {
+    margin-top: 10px;
+}
+
+.view-details-btn {
+    margin-top: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    .view-details-btn:hover {
+        background-color: #218838;
+    }
+
+/* Font Awesome icons */
+.fa-info-circle {
+    margin-left: 5px;
+}
+
+
+/* Добавьте эти стили в ваш файл CSS */
+
+.order-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-error {
+    color: red;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+    .btn-secondary:hover {
+        background-color: #545b62;
+    }
+
+/* Добавьте эти стили в ваш файл CSS */
+
+.order-details {
+    max-width: 600px;
+    margin: 0 auto;
+}
+    
+.order-number-details {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.order-details div {
+    margin-bottom: 15px;
+}
+
+.order-details strong {
+    font-weight: bold;
+}
+
+.btn-create {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+    .btn-danger:hover {
+        background-color: #c82333;
+    }

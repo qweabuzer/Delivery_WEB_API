@@ -1,0 +1,30 @@
+﻿@model Orders
+
+<div class="order-details">
+    <div class="order-number-details">
+        <strong>Номер заказа:</strong> @Model.SerialNumber
+    </div>
+
+    <div>
+        <strong>Город отправителя:</strong> @Model.SenderCity
+    </div>
+    <div>
+        <strong>Адрес отправителя:</strong> @Model.SenderAddress
+    </div>
+    <div>
+        <strong>Город получателя:</strong> @Model.RecipientCity
+    </div>
+    <div>
+        <strong>Адрес получателя:</strong> @Model.RecipientAddress
+    </div>
+    <div>
+        <strong>Вес груза:</strong> @Model.Weight kg
+    </div>
+    <div>
+        <strong>Дата забора груза:</strong> @Model.PickupDate.ToShortDateString()
+    </div>
+
+    <div>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Назад</a>
+    </div>
+</div>
